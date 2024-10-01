@@ -1,4 +1,4 @@
-{% set version = '2.6.2' %}
+{% set version = "2.6.5" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,11 +9,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/phylolm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/phylolm/phylolm_{{ version }}.tar.gz
-  sha256: d6fa45f58689cce9fe91519ab55a61c1e549e5a7f18b6989bf86234d483cff12
+  sha256: 658b22fb3e9c8e9ae7e54d2296e668b55d85ce129bac2626bcc515afe351e269
 
 build:
   skip: true  # [r_base == "3.6"]
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,11 +46,8 @@ test:
 about:
   home: https://github.com/lamho86/phylolm
   license: GPL-2.0-or-later
-  summary: Provides functions for fitting phylogenetic linear models and phylogenetic generalized
-    linear models. The computation uses an algorithm that is linear in the number of
-    tips in the tree. The package also provides functions for simulating continuous
-    or binary traits along the tree. Other tools include functions to test the adequacy
-    of a population tree.
+  summary: Provides functions for fitting phylogenetic linear models and phylogenetic generalized linear models. The computation uses an algorithm that is linear in the number of tips in the tree. The package also provides functions for simulating continuous or binary traits along the tree. Other tools include functions
+    to test the adequacy of a population tree.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
